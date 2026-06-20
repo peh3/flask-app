@@ -23,7 +23,7 @@ def thread_check():
 
 if __name__ == '__main__':
     # Force single-threaded execution (requests will block sequentially)
-    app.run(host="0.0.0.0", port=8080, threaded=False)
+    #app.run(host="0.0.0.0", port=8080, threaded=False)
     
     # Force multi-threaded execution explicitly
-    # app.run(host="0.0.0.0", port=8080, threaded=True)
+    app.run(host="0.0.0.0", port=8080, threaded=True)
