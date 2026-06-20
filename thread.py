@@ -18,5 +18,12 @@ def thread_check():
     current_thread = threading.current_thread().name
     return f"<p>Active Request Thread Name: {current_thread}</p>"
 
+#if __name__ == '__main__':
+#    app.run(host="0.0.0.0", port=8080)
+
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=8080)
+    # Force single-threaded execution (requests will block sequentially)
+    app.run(host="0.0.0.0", port=8080, threaded=False)
+    
+    # Force multi-threaded execution explicitly
+    # app.run(host="0.0.0.0", port=8080, threaded=True)
